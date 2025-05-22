@@ -129,14 +129,6 @@ module.exports = function Solodungeon(mod) {
 		return true;
 	});
 
-	mod.hook('S_SPAWN_NPC', 12, event => {
-		if (!mod.settings.ghilliereset) return;
-		if (event.huntingZoneId == 713 && chests.includes(event.templateId)) {
-			reset = true;
-			mod.command.message('Ghillieglade will be reset the next time you enter veliks sanctuary.');
-		}
-	});
-
 	mod.hook('C_RESET_ALL_DUNGEON', 1, event => {
 		if (!mod.settings.ghilliereset) return;
 		if (mod.game.me.zone == 9713) {
