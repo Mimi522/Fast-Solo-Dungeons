@@ -59,15 +59,7 @@ module.exports = function Velikaredirect(mod) {
 		}
 		return true;
 	});
-
-	mod.hook('S_SPAWN_NPC', 10, event => {
-		if (!ghilliereset) return;
-		if (event.huntingZoneId == 713 && chests.includes(event.templateId)) {
-			reset = true;
-			mod.command.message('Ghillieglade will be reset the next time you enter veliks sanctuary.');
-		}
-	});
-
+	
 	mod.hook('C_RESET_ALL_DUNGEON', 1, event => {
 		if (!ghilliereset) return;
 		if (mod.game.me.zone == 9713) {
